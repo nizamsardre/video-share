@@ -1,10 +1,12 @@
 package com.dailycodebuffer.springbootmongodb.service;
 
+import com.dailycodebuffer.springbootmongodb.collection.Person;
 import com.dailycodebuffer.springbootmongodb.collection.Video;
 import com.dailycodebuffer.springbootmongodb.repository.VideoRepository;
 import org.bson.BsonBinarySubType;
 import org.bson.types.Binary;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,5 +26,12 @@ public class VideoServiceImpl implements VideoService {
         video.setViews(video.getViews()+1); //views count
         videoRepository.save(video);
         return video;
+    }
+
+    @Override
+    public String save(Video video) {
+
+
+        return videoRepository.save(video).getId();
     }
 }

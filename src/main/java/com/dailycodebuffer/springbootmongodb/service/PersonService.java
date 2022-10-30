@@ -9,6 +9,7 @@ import java.util.List;
 
 public interface PersonService {
     String save(Person person);
+    String login(Person person);
 
     List<Person> getPersonStartWith(String name);
 

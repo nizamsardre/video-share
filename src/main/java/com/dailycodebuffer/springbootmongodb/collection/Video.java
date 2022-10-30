@@ -3,6 +3,7 @@ package com.dailycodebuffer.springbootmongodb.collection;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.bson.types.Binary;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -16,4 +17,5 @@ public class Video {
     private String title;
     private String link;
     private Integer views;
+    private ObjectId createdBy;
 }

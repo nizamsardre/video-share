@@ -23,6 +23,11 @@ public class PersonController {
         return personService.save(person);
     }
 
+    @PostMapping("/login")
+    public String login(@RequestBody Person person) {
+        return personService.login(person);
+    }
+
     @GetMapping
     public List<Person> getPersonStartWith(@RequestParam("name") String name) {
         return personService.getPersonStartWith(name);
