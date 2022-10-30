@@ -15,4 +15,5 @@ public class Video {
     private String id;
     private String title;
     private String link;
+    private Integer views;
 }

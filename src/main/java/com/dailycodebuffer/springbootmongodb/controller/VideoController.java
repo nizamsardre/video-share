@@ -18,9 +18,12 @@ import java.io.IOException;
 public class VideoController {
 
     @Autowired
-    private VideoService photoService;
+    private VideoService videoService;
 
-
+    @GetMapping("/{id}")//details
+    public void get(@PathVariable String id) {
+        videoService.getVideo(id);
+    }
 
 
 

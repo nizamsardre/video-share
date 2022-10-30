@@ -14,12 +14,15 @@ import java.io.IOException;
 public class VideoServiceImpl implements VideoService {
 
     @Autowired
-    private VideoRepository photoRepository;
+    private VideoRepository videoRepository;
 
 
 
     @Override
     public Video getVideo(String id) {
-        return photoRepository.findById(id).get();
+        Video video = videoRepository.findById(id).get();
+        video.setViews(video.getViews()+1); //views count
+        videoRepository.save(video);
+        return video;
     }
 }
